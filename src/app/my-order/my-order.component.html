@@ -1,0 +1,56 @@
+<h1>Item in the Order Cart</h1>
+<div class="row col-10">
+  <p>You have <b>{{ itemCartItemCount }}</b> items.</p>
+  <table class="table" *ngIf="itemCartItemCount">
+    <thead>
+        <tr>
+          <th>#</th>
+          <th>Image</th>
+          <th>title</th>
+          <th>quantity</th>
+          <th>price</th>
+          <th></th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cart; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>
+          <img [style.backgroundImage]="'url('+ item.imageUrl + ')'"  class="thambnail" alt="">
+        </td>
+        <td>{{ item.title }}</td>
+        <td>
+          <div class="row no-gutters">
+              <div class="col-2">
+                <button
+                (click)="removeFromCart(item)"  
+                class="btn btn-outline-primary btn-block">-</button>
+              </div>
+              <div class="col text-center">
+                {{ item.quantity }} in Order 
+              </div>
+              <div class="col-2">
+                <button 
+                  (click)="addToCart(item)"
+                  class="btn btn-outline-primary btn-block">+</button>
+              </div>
+            </div>
+        </td>
+        <td>{{ item.price | currency:'USD':true }}</td>
+        <td>{{ item.price * item.quantity | currency:'USD':true }}</td>
+      </tr>
+      <tr>
+        <th class="text-right" colspan="5">Total</th>
+        <th> {{ totalPrice | currency:'USD':true }}</th>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>
+          <button
+            (click)="clearCart()" 
+            class="btn btn-danger btn-sm">Clear Order Cart</button>
+        </td>
+      </tr>
+    </tfoot>
+  </table>

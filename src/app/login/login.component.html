@@ -1,0 +1,38 @@
+<div class="container">
+<form #f="ngForm" (ngSubmit)="login(f.value)" id="singupform">
+  <h3>Log In to Your Account.</h3>
+
+  <div class="form-group">
+      <input #email="ngModel" ngModel pattern="[a-zA-Z0-9_.]+@[a-zA-Z]+\.[a-zA-Z]{2,3}" type="emait" name="email" class="form-control"
+       placeholder="Email address" autofocus="true" required> 
+  </div>
+  <div *ngIf="email.touched && email.invalid" class="alert alert-danger">
+    <div *ngIf="email.errors.required">Email is required.</div>
+    <div *ngIf="email.errors.pattern">Enter a valid email address.</div>
+  </div>
+
+  <div class="form-group">
+      <input #password="ngModel" ngModel minlength="3" type="password" name="password" class="form-control"
+       placeholder="Password" required>
+  </div>
+  <div *ngIf="password.touched && password.invalid" class="alert alert-danger">
+    <div *ngIf="password.errors.required">Password is required.</div>
+    <div *ngIf="password.errors.minlength">Valid password should be minimum 3 characters.</div>
+  </div>
+
+  <div class="form-group">
+    <button 
+      class="btn btn-primary btn-block">Log In</button>
+  </div>
+</form>
+<p>Or Log In with
+  <span 
+  (click)="loginWithGoogle()"
+  class="text-primary googleLogin"> Google</span>
+   <br> I don't have an account 
+   <span
+      routerLink="/sing-up" 
+    class="text-primary googleLogin">Sing Up</span> 
+</p>
+
+</div>

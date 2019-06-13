@@ -1,0 +1,39 @@
+
+.card-footer{
+    padding: 0;
+}
+
+#card {
+    margin-bottom: 30px;
+}
+
+.text-center.lb{
+    position: relative; 
+    margin-top: -2.6rem;
+    float: right;
+    padding: 3px; 
+    font-size: 1.5rem; 
+    font-weight: bolder;
+    color: green;
+    width: 100%;
+    background-color: lightgrey;
+    opacity: .6;
+}
+
+span.badge.badge-primary {
+    margin: 4px;
+}
+
+div.card-body {
+    padding: 0;
+}
+
+h5.card-title {
+    margin: 0;
+    padding-top: 0;
+    padding-left: -4px;
+}
+
+img.card-img-top {
+    cursor: pointer;
+}

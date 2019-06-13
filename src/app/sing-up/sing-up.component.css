@@ -1,0 +1,62 @@
+div.container {
+    padding: 2rem;
+    width: 30rem;
+    background-image: -webkit-linear-gradient(54deg,  rgb(238, 196, 26) 50%, #f5f5f5 50%);
+}
+/* #f5f5f5 */
+/* rgb(226, 226, 226)  */
+#singupform {
+    text-align: center;
+    display: contents;
+}
+
+div.container p {
+    /* color: #ffffff; */
+    font-weight: bold;
+}
+
+div.container p  span {
+    font-weight: bolder;
+    font-style: italic;
+}
+
+div.form-group {
+    margin-bottom: auto;
+}
+#singupform {
+    width: 100%;
+    max-width: 330px;
+    margin-top: 80px;
+    /* padding: 15px; */
+    /* margin: auto; */
+  }
+#singupform .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+    opacity: .7;
+  }
+
+input.form-control[type="text"]{
+    border-radius: 0;
+    margin-bottom: -1px;
+}
+
+input.form-control[type="emait"] {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: -1px;
+}
+
+input.form-control[type="password"] {
+    margin-top: -1px;
+    margin-bottom: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.googleLogin {
+    cursor: pointer;
+}

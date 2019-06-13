@@ -1,0 +1,32 @@
+<p>
+<button routerLink="/admin/menu/items/new" class="btn btn-primary">Add New Item</button>
+</p>
+<div class="form-group">
+<input 
+#item
+(keyup)="search(item.value)"  type="text" name="search" class="form-control" placeholder="Search... ">
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Label</th>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let m of filteredMenus">
+            <td>
+                <img [style.backgroundImage]="'url('+ m.imageUrl + ')'"  class="thambnail" alt="">
+            </td>
+            <td>{{ m.title }}</td>
+            <td>{{ m.price }}</td>
+            <td>{{ m.label }}</td>
+            <td>
+                <a [routerLink]="['/admin/menu/items', m.key]">Edit</a>
+            </td>
+        </tr>
+    </tbody>
+</table> 
